@@ -1,5 +1,6 @@
-; THIS ARCHIVE REDISTRIBUTION IS NOT ALLOWED, USE THE FOLLOWING LINK INSTEAD
-; http://www.dev-c.com/gtav/scripthookv/
+All rights go to Alexander Blade for the development SDK.
+
+This is the Spanish translation for his Native Trainer
 
 
 							SCRIPT HOOK V SDK
