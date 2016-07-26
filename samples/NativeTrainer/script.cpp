@@ -1116,7 +1116,7 @@ void process_weapon_menu()
 		{"MUNICIÓN ARDIENTE",		&featureWeaponFireAmmo,		  NULL},
 		{"MUNICIÓN EXPLOSIVA",  &featureWeaponExplosiveAmmo,  NULL},
 		{"PUNZÓN EXPLOSIVA", &featureWeaponExplosiveMelee, NULL},
-		{"VEHICLE ROCKETS [ESTO NECESITA TRADUCCIÓN]", &featureWeaponVehRockets,	  NULL}
+		{"COHETES DE COCHE", &featureWeaponVehRockets,	  NULL}
 	};
 
 	static LPCSTR weaponNames[] = {
@@ -1586,9 +1586,9 @@ void process_time_menu()
 		bool		*pUpdated;
 	} lines[lineCount] = {
 		{"HORA HACIA ADELANTE",	 NULL,				 NULL},
-		{"HORA VOLVER [Verifique esta traducción]",	 NULL,				 NULL},
+		{"HORA VOLVER",	 NULL,				 NULL},
 		{"TIEMPO DE PAUSA",	 &featureTimePaused, &featureTimePausedUpdated},
-		{"SYNC WITH SYSTEM [ESTO NECESITA UNA TRADUCCÍON]", &featureTimeSynced, NULL}
+		{"SINCRONIZAR CON ORDENADOR", &featureTimeSynced, NULL}
 	};
 
 	DWORD waitTime = 150;
