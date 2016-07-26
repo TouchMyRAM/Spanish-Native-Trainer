@@ -944,28 +944,28 @@ void process_player_menu()
 	const float lineWidth = 250.0;
 	const int lineCount = 15;
 	
-	std::string caption = "PLAYER  OPTIONS";
+	std::string caption = "OPCIONES DEL JUGADOR";
 
 	static struct {
 		LPCSTR		text;
 		bool		*pState;
 		bool		*pUpdated;
 	} lines[lineCount] = {
-		{"CAMBIADOR PIEL", NULL, NULL},
+		{"CAMBIADOR MODELO", NULL, NULL},
 		{"TELETRANSPORTAR", NULL, NULL},
 		{"CURAR", NULL, NULL},
-		{"RESTABLECER LA PIEL", NULL, NULL},
+		{"RESTABLECER MODELO", NULL, NULL},
 		{"DAR DINERO", NULL, NULL},
-		{"DESEADO +", NULL, NULL},
-		{"DESEADO -", NULL, NULL},
-		{"POLICÍA DISABLE", &featurePlayerNeverWanted, NULL},
+		{"MÁS BUSCADO", NULL, NULL},
+		{"MENOS BUSCADO", NULL, NULL},
+		{"QUITAR POLICÍA", &featurePlayerNeverWanted, NULL},
 		{"INVENCIBLE", &featurePlayerInvincible, &featurePlayerInvincibleUpdated},
-		{"LA POLICÍA IGNORA USTED", &featurePlayerIgnored, &featurePlayerIgnoredUpdated},
-		{"CAPACIDAD ILIMITADA", &featurePlayerUnlimitedAbility, NULL},
+		{"LA POLICÍA TE IGNORA", &featurePlayerIgnored, &featurePlayerIgnoredUpdated},
+		{"HABILIDAD ILIMITADA", &featurePlayerUnlimitedAbility, NULL},
 		{"MODO SILENCIOSO", &featurePlayerNoNoise, &featurePlayerNoNoiseUpdated},
 		{"NADAR RÁPIDO", &featurePlayerFastSwim, &featurePlayerFastSwimUpdated},
 		{"CORRER RAPIDO", &featurePlayerFastRun, &featurePlayerFastRunUpdated},
-		{"SALTO DE ALTURA", &featurePlayerSuperJump, NULL}
+		{"SALTAR ALTO", &featurePlayerSuperJump, NULL}
 	};
 
 	DWORD waitTime = 150;
@@ -1104,7 +1104,7 @@ void process_weapon_menu()
 	const float lineWidth = 250.0;
 	const int lineCount = 6;
 
-	std::string caption = "LAS OPCIONES  DE ARMAS";
+	std::string caption = "OPCIONES DE ARMAS";
 
 	static struct {
 		LPCSTR		text;
@@ -1113,10 +1113,10 @@ void process_weapon_menu()
 	} lines[lineCount] = {
 		{"DAR TODAS LAS ARMAS",	NULL,						  NULL},
 		{"NO RECARGAR",		&featureWeaponNoReload,		  NULL},
-		{"MUNICIÓN ARDIENTE",		&featureWeaponFireAmmo,		  NULL},
+		{"MUNICIÓN INCENDIARIA",		&featureWeaponFireAmmo,		  NULL},
 		{"MUNICIÓN EXPLOSIVA",  &featureWeaponExplosiveAmmo,  NULL},
-		{"PUNZÓN EXPLOSIVA", &featureWeaponExplosiveMelee, NULL},
-		{"COHETES DE COCHE", &featureWeaponVehRockets,	  NULL}
+		{"GOLPES EXPLOSIVOS", &featureWeaponExplosiveMelee, NULL},
+		{"MISILES DEL VEHICULO", &featureWeaponVehRockets,	  NULL}
 	};
 
 	static LPCSTR weaponNames[] = {
@@ -1364,21 +1364,21 @@ void process_veh_menu()
 	const float lineWidth = 250.0;
 	const int lineCount = 8;
 
-	std::string caption = "LAS OPCIONES  DE VEHÍCULO";
+	std::string caption = "OPCIONES DE VEHÍCULO";
 
 	static struct {
 		LPCSTR		text;
 		bool		*pState;
 		bool		*pUpdated;
 	} lines[lineCount] = {
-		{"UN COCHE SPAWN",		NULL, NULL},
-		{"COLOR ALEATORIO",	NULL, NULL},
-		{"FIX",				NULL, NULL},
+		{"APARECER COCHE",		NULL, NULL},
+		{"PINTURA ALEATORIA",	NULL, NULL},
+		{"REPARAR",				NULL, NULL},
 		{"CINTURÓN DE SEGURIDAD",		&featureVehSeatbelt, &featureVehSeatbeltUpdated},
-		{"WARP EN EL COCHE",	&featureVehWrapInSpawned, NULL},
-		{"INVENCIBLE",		&featureVehInvincible, &featureVehInvincibleUpdated},
-		{"RUEDAS INVENCIBLE",	&featureVehInvincibleWheels, &featureVehInvincibleWheelsUpdated},
-		{"BOOST DEL COCHE",		&featureVehSpeedBoost, NULL}		
+		{"MOVER AL COCHE",	&featureVehWrapInSpawned, NULL},
+		{"INDESTRUCTIBLE",		&featureVehInvincible, &featureVehInvincibleUpdated},
+		{"RUEDAS INDESTRUCTIBLES",	&featureVehInvincibleWheels, &featureVehInvincibleWheelsUpdated},
+		{"TURBO",		&featureVehSpeedBoost, NULL}		
 	};
 
 	DWORD waitTime = 150;
@@ -1481,18 +1481,18 @@ void process_world_menu()
 	const float lineWidth = 250.0;
 	const int lineCount = 5;
 
-	std::string caption = "OPCIONES  MUNDIAL";
+	std::string caption = "OPCIONES DEL MUNDO";
 
 	static struct {
 		LPCSTR		text;
 		bool		*pState;
 		bool		*pUpdated;
 	} lines[lineCount] = {
-		{"LUNA GRAVEDAD",	&featureWorldMoonGravity,	NULL},
+		{"GRAVEDAD LUNAR",	&featureWorldMoonGravity,	NULL},
 		{"POLICÍAS",		&featureWorldRandomCops,	NULL},
 		{"TRENES",	&featureWorldRandomTrains,	NULL},
-		{"EMBARCACIONES",	&featureWorldRandomBoats,	NULL},
-		{"CAMIÓN DE BASURA",	&featureWorldGarbageTrucks,	NULL}
+		{"BARCOS",	&featureWorldRandomBoats,	NULL},
+		{"CAMIÓNES DE BASURA",	&featureWorldGarbageTrucks,	NULL}
 	};
 
 	DWORD waitTime = 150;
@@ -1578,16 +1578,16 @@ void process_time_menu()
 	const float lineWidth = 250.0;
 	const int lineCount = 4;
 
-	std::string caption = "OPCIONES DE  LA HORA";
+	std::string caption = "OPCIONES DE HORA";
 
 	static struct {
 		LPCSTR		text;
 		bool		*pState;
 		bool		*pUpdated;
 	} lines[lineCount] = {
-		{"HORA HACIA ADELANTE",	 NULL,				 NULL},
-		{"HORA VOLVER",	 NULL,				 NULL},
-		{"TIEMPO DE PAUSA",	 &featureTimePaused, &featureTimePausedUpdated},
+		{"AVANZAR HORA",	 NULL,				 NULL},
+		{"RETROCEDER HORA",	 NULL,				 NULL},
+		{"PARAR TIEMPO",	 &featureTimePaused, &featureTimePausedUpdated},
 		{"SINCRONIZAR CON ORDENADOR", &featureTimeSynced, NULL}
 	};
 
@@ -1790,9 +1790,9 @@ int activeLineIndexMisc = 0;
 void process_misc_menu()
 {
 	const float lineWidth = 250.0;
-	const int lineCount = 2;
+	const int lineCount = 3;
 
-	std::string caption = "Miscelánea";
+	std::string caption = "MisceláneOS";
 
 	static struct {
 		LPCSTR		text;
@@ -1800,7 +1800,8 @@ void process_misc_menu()
 		bool		*pUpdated;
 	} lines[lineCount] = {
 		{"SIGUIENTE CANCIÓN DE RADIO",	NULL,					NULL},
-		{"OCULTAR HUD",			&featureMiscHideHud,	NULL}		
+		{"OCULTAR HUD",			&featureMiscHideHud,	NULL},	
+		{"MUCHAS GRÁCIAS LUIGIELP",	NULL,					NULL }
 	};
 
 
